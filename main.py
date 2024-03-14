@@ -33,11 +33,8 @@ while game_is_on:
         break
 
 list_of_states = data["state"].to_list()
-missed_states = []
+missed_states = [state for state in list_of_states if state not in correct_answers]
 
-for state in list_of_states:
-    if state not in correct_answers:
-        missed_states.append(state)
 
 state_dict = {
     "state": missed_states
